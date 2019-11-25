@@ -10,8 +10,8 @@ namespace Movies
     {
         static void Main(string[] args)
         {
-            int z;
-            x(ref z);
+            Console.WriteLine(FileHandling.ReadFromFile("../../Films.ini").Count());
+            
         }
 
         static void x(ref int x)
