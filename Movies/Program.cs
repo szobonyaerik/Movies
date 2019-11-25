@@ -10,7 +10,7 @@ namespace Movies
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(FileHandling.ReadFromFile("../../Films.ini").Count());
+            Console.WriteLine(FileHandling.ReadFromFile("../../Films.ini").Keys.Count());
             
         }
 
