@@ -10,6 +10,12 @@ namespace Movies
     {
         static void Main(string[] args)
         {
+            int z;
+            x(ref z);
+        }
+
+        static void x(ref int x)
+        {
         }
     }
 }
