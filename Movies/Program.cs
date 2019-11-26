@@ -12,9 +12,10 @@ namespace Movies
         {
             
             var xy = FileHandling.ReadFromFile("../../Films.ini");
-            foreach (var element in xy.Values)
-                foreach (var el in element.Keys)
-                    Console.WriteLine(el);
+            foreach (var element in xy.Keys)
+                Console.WriteLine(xy[element]["director"]);
+           // Console.WriteLine(xy["[Die Hard]"]["director"]);
+            Console.ReadLine();
 
 
 

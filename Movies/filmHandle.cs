@@ -8,28 +8,14 @@ namespace Movies
     
 
 {
-    enum filmData
-    {
-        DIRECTOR,
-        RELASEYEAR,
-        STARS,
-        BUDGET,
-
-        
-    }
     class filmHandle
     {
-        public static List<Film> writeOutAllFilms()
+        public static 
         {
             List<Film> filmList = new List<Film>();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
-            foreach (var element in filmDictionaryes)
-            {
-               
-            }
+            
 
-            return filmList;
-        }
 
     }
 }
