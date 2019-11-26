@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="FileHandling.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="filmHandle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
