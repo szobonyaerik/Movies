@@ -26,6 +26,9 @@ namespace Movies
         public override string ToString()
         {
             StringBuilder sr = new StringBuilder();
+
+
+
             sr.Append($"{this.Title} , director {this.Director}, in {this.ReleaseYear}, the film star(s) {this.Stars} the budget was {this.Budget}");
             return sr.ToString();
         }
