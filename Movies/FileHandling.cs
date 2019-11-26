@@ -12,7 +12,7 @@ namespace Movies
         public static Dictionary<string, Dictionary<string, List<string>>> ReadFromFile(string FileName)
         {
             List<string> t = new List<string>();
-            string keyValue = "";
+            
             Dictionary<string, Dictionary<string, List<string>>> allFilm = new Dictionary<string, Dictionary<string, List<string>>>();
             Dictionary<string,List<string>> oneField = new Dictionary<string, List<string>>();
             var file = File.ReadAllLines(FileName);
@@ -22,17 +22,16 @@ namespace Movies
                 if (file[i].Contains('='))
                 {
                     var result = file[i].Split('=');
-                    foreach (var element in result)
-                    {
-                        t.Add(element);
-                        keyValue = t[0];
-                        t.Remove(t[0]);
+                    t.Add(result[1]);
 
-                    }
-                    oneField.Add(keyValue, t);
+
+                    
+                    oneField.Add(result[0], t);
+                    t = new List<string>();
+                    
 
                 }
-                if (i != 0 && i % 5 == 0)
+                if (i % 5 == 0 || i == file.Count() - 1)
                 {
                     allFilm.Add(file[i], oneField);
                     oneField = new Dictionary<string, List<string>>();
