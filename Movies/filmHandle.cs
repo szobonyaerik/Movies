@@ -15,7 +15,7 @@ namespace Movies
             List<Film> filmList = new List<Film>();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
             Console.WriteLine("Kurva anyád");
-            return "faszocska";
+            return "faszocskák";
 
 
         }
