@@ -10,12 +10,14 @@ namespace Movies
 {
     class filmHandle
     {
-        public static 
+        public static string filmByTitle()
         {
             List<Film> filmList = new List<Film>();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
-            
+            Console.WriteLine("Kurva anyád");
+            return "faszocska";
 
 
+        }
     }
 }
