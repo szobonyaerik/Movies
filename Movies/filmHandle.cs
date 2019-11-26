@@ -14,8 +14,15 @@ namespace Movies
         {
             List<Film> filmList = new List<Film>();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
-            Console.WriteLine("Kurva anyád");
-            return "faszocska";
+            Console.Write("Give me the film Title: ");
+            string title = Console.ReadLine();
+            var thefilm = filmDictionaryes["[" + title + "]"];
+            string result = $"Title = {title}\nDirector = {thefilm["director"]},\nRelease year = {thefilm["release_year"]}\nStars = {thefilm["stars"]}\nBudget = {thefilm["budget"]}\n";
+
+            return result;
+            
+
+            
 
 
         }
