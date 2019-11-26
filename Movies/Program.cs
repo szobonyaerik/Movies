@@ -14,8 +14,6 @@ namespace Movies
             
         }
 
-        static void x(ref int x)
-        {
-        }
+       
     }
 }
