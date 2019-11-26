@@ -23,6 +23,10 @@ namespace Movies
         {
             List<Film> filmList = new List<Film>();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
+            foreach (var element in filmDictionaryes)
+            {
+               
+            }
 
             return filmList;
         }

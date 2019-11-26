@@ -10,11 +10,11 @@ namespace Movies
     {
         public string Title { get; set; }
         public List<string> Director { get; set; }
-        public int ReleaseYear { get; set; }
+        public List<int> ReleaseYear { get; set; }
         public List<string> Stars { get; set; }
-        public int Budget { get; set; }
+        public List<int> Budget { get; set; }
 
-        public Film(string title,List<string> director,int releaseYear,List<string> stars,int budget)
+        public Film(string title, List<string> director, List<int> releaseYear,List<string> stars, List<int> budget)
         {
             this.Title = title;
             this.Director = director;
