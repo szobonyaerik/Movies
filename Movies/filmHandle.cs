@@ -10,9 +10,9 @@ namespace Movies
 {
     class filmHandle
     {
-        public static string filmByTitle()
+        public static string filmsByTitle()
         {
-            List<Film> filmList = new List<Film>();
+            StringBuilder sr = new StringBuilder();
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
             Console.Write("Give me the film Title: ");
             string title = Console.ReadLine();
