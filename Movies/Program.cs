@@ -18,11 +18,11 @@ namespace Movies
 
             if (x == 1)
             {
-                filmHandle.filmByTitle();
+                filmHandle.displayFilms();
             }
             else if(x == 2)
             {
-                filmHandle.filmByTitle();
+                Console.WriteLine(filmHandle.filmByTitle());
             }
             else if(x == 3)
             {
@@ -40,14 +40,6 @@ namespace Movies
 
 
             Console.ReadLine();
-
-
-
-
-
-
-
-
 
 
         }
