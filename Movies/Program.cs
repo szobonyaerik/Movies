@@ -12,7 +12,7 @@ namespace Movies
         {
             
    
-            /*displayMenu(mainMenu());
+            displayMenu(mainMenu());
             Console.Write("Enter a number to enter a menu: ");
             int menuNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -26,11 +26,13 @@ namespace Movies
             }
             else if(menuNumber == 3)
             {
-                filmHandle.filmsByTitle();
+                var newFilm = filmHandle.addFilm();
+                FileHandling.writeToFile("../../Films.ini", newFilm);
             }
             else if(menuNumber == 4)
             {
-                filmHandle.filmsByTitle();
+                var delFilm = filmHandle.deleteFilmByTitle();
+                FileHandling.writeToFile("../../Films.ini",delFilm);
             }
             else if(menuNumber == 5)
             {
@@ -39,7 +41,7 @@ namespace Movies
             }
 
 
-            Console.ReadLine();*/
+            Console.ReadLine();
 
 
         }

@@ -16,7 +16,7 @@ namespace Movies
             var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
             Console.Write("Give me the film Title: ");
             string title = Console.ReadLine();
-            if(filmDictionaryes.ContainsKey("[" + title + "]"))
+            if (filmDictionaryes.ContainsKey("[" + title + "]"))
             {
                 var thefilm = filmDictionaryes["[" + title + "]"];
                 string result = $"Title = {title}\nDirector = {thefilm["director"]},\nRelease year = {thefilm["release_year"]}\nStars = {thefilm["stars"]}\nBudget = {thefilm["budget"]}\n";
@@ -28,7 +28,7 @@ namespace Movies
                 return "This film is not in the file.";
             }
 
-            
+
 
 
         }
@@ -44,7 +44,7 @@ namespace Movies
 
                 Console.WriteLine(result);
             }
-            
+
         }
         public static Dictionary<string, Dictionary<string, string>> addFilm()
         {
@@ -58,11 +58,27 @@ namespace Movies
                 Console.Write($"Give me the {element}: ");
                 oneField.Add(element, Console.ReadLine());
             }
-            filmDictionary.Add(title, oneField);
+            filmDictionary.Add(title, oneField);            
             return filmDictionary;
 
-            
 
+
+        }
+        public static Dictionary<string, Dictionary<string, string>> deleteFilmByTitle()
+        {
+            List<Film> filmList = new List<Film>();
+            var filmDictionaryes = FileHandling.ReadFromFile("../../Films.ini");
+            Console.Write("Give me the film Title: ");
+            string title = "[" + Console.ReadLine() + "]";
+            if (filmDictionaryes.ContainsKey(title))
+            {
+                filmDictionaryes.Remove(title);
+                return filmDictionaryes;
+            }
+            else
+            {
+                return filmDictionaryes;
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Movies
                     sw.WriteLine(element.Key);
                     foreach(var el in element.Value)
                     {
-                        sw.WriteLine($"{el.Key}={el.Value}");
+                        sw.WriteLine($"{el.Key}={el.Value}") ;
                     }
                 }
             }
