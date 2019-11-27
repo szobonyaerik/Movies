@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FilmLibrary;
 
 namespace Movies
 {
@@ -31,12 +32,12 @@ namespace Movies
                     else if (menuNumber == 3)
                     {
                         var newFilm = filmHandle.addFilm();
-                        FileHandling.writeToFile("../../Films.ini", newFilm);
+                        FileHandling.writeToFile("../../testFilms.ini", newFilm);
                     }
                     else if (menuNumber == 4)
                     {
                         var delFilm = filmHandle.deleteFilmByTitle();
-                        FileHandling.writeToFile("../../Films.ini", delFilm);
+                        FileHandling.writeToFile("../../testFilms.ini", delFilm);
                     }
                     else if (menuNumber == 5)
                     {
