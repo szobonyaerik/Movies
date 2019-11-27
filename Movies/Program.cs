@@ -14,27 +14,27 @@ namespace Movies
    
             displayMenu(mainMenu());
             Console.Write("Enter a number to enter a menu: ");
-            int x = Convert.ToInt32(Console.ReadLine());
+            int menuNumber = Convert.ToInt32(Console.ReadLine());
 
-            if (x == 1)
+            if (menuNumber == 1)
             {
                 filmHandle.displayFilms();
             }
-            else if(x == 2)
+            else if(menuNumber == 2)
             {
                 Console.WriteLine(filmHandle.filmsByTitle());
             }
-            else if(x == 3)
+            else if(menuNumber == 3)
             {
                 filmHandle.filmsByTitle();
             }
-            else if(x == 4)
+            else if(menuNumber == 4)
             {
                 filmHandle.filmsByTitle();
             }
-            else if(x == 5)
+            else if(menuNumber == 5)
             {
-                System.Environment.Exit(0);
+                Environment.Exit(0);
 
             }
 
