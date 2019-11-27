@@ -11,7 +11,7 @@ namespace Movies
         static void Main(string[] args)
         {
 
-            
+   
             displayMenu(mainMenu());
             Console.Write("Enter a number to enter a menu: ");
             int x = Convert.ToInt32(Console.ReadLine());
@@ -22,15 +22,15 @@ namespace Movies
             }
             else if(x == 2)
             {
-                Console.WriteLine(filmHandle.filmByTitle());
+                Console.WriteLine(filmHandle.filmsByTitle());
             }
             else if(x == 3)
             {
-                filmHandle.filmByTitle();
+                filmHandle.filmsByTitle();
             }
             else if(x == 4)
             {
-                filmHandle.filmByTitle();
+                filmHandle.filmsByTitle();
             }
             else if(x == 5)
             {

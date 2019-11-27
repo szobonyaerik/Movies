@@ -36,19 +36,6 @@ namespace Movies
 
 
                 }
-
-
-
-                /*if (file[i].Contains('='))
-                {
-                    var result = file[i].Split('=');
-                    oneField.Add(result[0], result[1]);
-                }
-                if ( (i == 0 || i % 5 == 0) && i != file.Count()-1)
-                {
-                    allFilm.Add(file[i], oneField);
-                    oneField = new Dictionary<string, string>();
-                }*/
             }
             return allFilm;
 

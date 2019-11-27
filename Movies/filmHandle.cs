@@ -46,5 +46,22 @@ namespace Movies
             }
             
         }
+        public static Dictionary<string, Dictionary<string, string>> addFilm()
+        {
+            Dictionary<string, Dictionary<string, string>> filmDictionary = FileHandling.ReadFromFile("../../Films.ini");
+            Dictionary<string, string> oneField = new Dictionary<string, string>();
+            string[] keywords = { "director", "release_year", "stars", "budget" };
+            Console.Write("Give me the film Title: ");
+            string title = "[" + Console.ReadLine() + "]";
+            foreach (string element in keywords)
+            {
+                Console.Write($"Give me the {element}: ");
+                oneField.Add(element, Console.ReadLine());
+            }
+            filmDictionary.Add(title, oneField);
+            return filmDictionary;
+            
+
+        }
     }
 }
