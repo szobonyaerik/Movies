@@ -39,5 +39,19 @@ namespace Movies
             }
             return allFilm;
         }
+        public static void writeToFile(string fileName, Dictionary<string, Dictionary<string, string>> filmDictionaries)
+        {
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                foreach(var element in filmDictionaries)
+                {
+                    sw.WriteLine(element.Key);
+                    foreach(var el in element.Value)
+                    {
+                        sw.WriteLine($"{el.Key}={el.Value}");
+                    }
+                }
+            }
+        }
     }
 }

@@ -10,9 +10,9 @@ namespace Movies
     {
         static void Main(string[] args)
         {
-
+            
    
-            displayMenu(mainMenu());
+            /*displayMenu(mainMenu());
             Console.Write("Enter a number to enter a menu: ");
             int menuNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -39,7 +39,7 @@ namespace Movies
             }
 
 
-            Console.ReadLine();
+            Console.ReadLine();*/
 
 
         }
