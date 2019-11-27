@@ -24,7 +24,7 @@ namespace Movies
                     keyword = file[i];
                 if (file[i].Contains('='))
                 {
-                    var result = file[i].Split('=');
+                    string[] result = file[i].Split('=');
                     oneField.Add(result[0], result[1]);
                     
                 }
