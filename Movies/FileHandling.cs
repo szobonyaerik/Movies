@@ -12,7 +12,6 @@ namespace Movies
         public static Dictionary<string, Dictionary<string, string>> ReadFromFile(string FileName)
         {
             
-            
             Dictionary<string, Dictionary<string, string>> allFilm = new Dictionary<string, Dictionary<string, string>>();
             Dictionary<string,string> oneField = new Dictionary<string, string>();
             string keyword = "";
@@ -33,17 +32,9 @@ namespace Movies
                     allFilm.Add(keyword, oneField);
                     keyword = "";
                     oneField = new Dictionary<string, string>();
-
-
                 }
             }
             return allFilm;
-
-            
-
         }
-
- 
-
     }
 }
