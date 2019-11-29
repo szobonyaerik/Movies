@@ -33,7 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FilmLibrary">
+    <Reference Include="FilmLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MovieLibrary\FilmLibrary\FilmLibrary\bin\Debug\FilmLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />

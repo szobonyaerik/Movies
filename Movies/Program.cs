@@ -12,10 +12,15 @@ namespace Movies
     {
         static void Main(string[] args)
         {
+            
+
             Console.Write("Give me the ini file in which you want to work: ");
             string file = Console.ReadLine();
             if (File.Exists(file))
             {
+                FileHandling fh = new FileHandling();
+                filmHandle filmh = new filmHandle();
+                List<Film> filmList = filmh.readFilmList(fh.ReadFromFile(file));
                 while (true)
                 {
 
@@ -28,42 +33,44 @@ namespace Movies
 
                         if (menuNumber == 1)
                         {
-                            Console.WriteLine(filmHandle.displayFilms(file));
+                            Console.WriteLine(filmh.displayFilms(filmList));
                         }
                         else if (menuNumber == 2)
                         {
                             Console.Write("Give me the film title: ");
-                            Console.WriteLine(filmHandle.filmsByTitle(file,Console.ReadLine()));
+                            Console.WriteLine(filmh.FilmsByTitle(filmList, Console.ReadLine()));
                         }
                         else if (menuNumber == 3)
                         {
                             Console.Write("Give me the film title: ");
                             string title = "[" + Console.ReadLine() + "]";
                             string[] keywords = { "director", "release_year", "stars", "budget" };
-                            List<string> values = new List<string>();
-                            foreach(string element in keywords)
+                            List<string> results = new List<string>();
+                            foreach (string element in keywords)
                             {
                                 Console.Write($"Give me the {element}: ");
-                                values.Add(Console.ReadLine());
+                                results.Add(Console.ReadLine());
                             }
-                            
-                            FileHandling.writeToFile(file, filmHandle.addFilm(file, title, keywords, values));
+
+                            filmh.addFilm(filmList, title, results[0], Convert.ToInt32(results[1]), results[2], Convert.ToInt32(results[3]));
                         }
                         else if (menuNumber == 4)
                         {
                             Console.Write("Give me the title: ");
                             string title = "[" + Console.ReadLine() + "]";
-                           
-                            FileHandling.writeToFile(file, filmHandle.deleteFilmByTitle(file, title));
+
+                            filmh.deleteFilmByTitle(filmList, title);
                         }
                         else if (menuNumber == 5)
                         {
-                            Environment.Exit(0);
+                            fh.writeToFile(file, filmList);
 
                         }
-                        else if (menuNumber > 5)
-                            Console.WriteLine("there is no such option");
+                        else if (menuNumber == 6)
+                            Environment.Exit(0);
 
+                        else if (menuNumber > 6)
+                            Console.WriteLine("there is no such option");
                     }
                     catch (Exception)
                     {
@@ -77,7 +84,7 @@ namespace Movies
         }
         static string[] mainMenu()
         {
-            string[] mainMenu = { "Display films", "Films by Title", "Add Films", "Delete Films", "Exit" };
+            string[] mainMenu = { "Display films", "Films by Title", "Add Films", "Delete Films","Write To The File", "Exit" };
             return mainMenu;
         }
         static void displayMenu(string[] mainMenu)
